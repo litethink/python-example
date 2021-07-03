@@ -35,4 +35,6 @@ volumn.rename(columns={0:symbol.uni_name},inplace=True)
 #no oder data
 e = pd.DataFrame([[2,3,1,4]],columns=["d2","d3","d1","d4"])
 
-#timestamp
+#timestamp 直接转换为str
+dt = pd.to_datetime(df.id, unit="s")
+
