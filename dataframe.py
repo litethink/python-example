@@ -41,3 +41,6 @@ dt = pd.to_datetime(df.id, unit="s")
 #csv 指定行首为列名及分割符
 df = pd.read_csv("history.csv",header=1,sep=",")
 
+#小时 1h 4小时 4h，时间序列要连续
+five_min_df = pd.DataFrame(m_df.loc[:, ['price', 'volume']], index=m_df.index).resample('5T', closed='left', label='left').mean().copy()
+five_min_df["volume"] = pd.DataFrame(m_df.loc[:, ['price', 'volume']], index=m_df.index).resample('5T', closed='left', label='left').sum().copy()["volume"]
