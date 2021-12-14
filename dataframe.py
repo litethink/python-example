@@ -37,6 +37,7 @@ e = pd.DataFrame([[2,3,1,4]],columns=["d2","d3","d1","d4"])
 
 #timestamp 直接转换为str
 dt = pd.to_datetime(df.id, unit="s")
+pd.to_datetime(df.id,unit="ms")
 
 #csv 指定行首为列名及分割符
 df = pd.read_csv("history.csv",header=1,sep=",")
